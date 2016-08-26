@@ -1,0 +1,18 @@
+<h2>Add A New Team</h2>
+
+<%= form_for @team do |f| %>
+
+
+    <div class="field">
+      <%= f.label :name %>:
+      <%= f.text_field :name, autofocus: true %><br />
+
+      <%= f.label :owner %>:
+      <%= f.text_field :owner %><br />
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Add Team" %>
+    </div>
+<% end %>
+
