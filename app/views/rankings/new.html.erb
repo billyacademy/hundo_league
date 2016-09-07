@@ -1,0 +1,40 @@
+<style type="text/css">
+  div.rankBox {
+    width:10px;
+  }
+</style>
+
+<h2>Create a New Power Ranking</h2>
+
+<%= form_for @ranking do |ranking_form| %>
+  <label for="Week" class="left inline">Week:</label>
+  <%= ranking_form.select :week_id, options_for_select(@weeks)%>
+  <% @rankings.each_with_index do |rank, index| %>
+    <%= fields_for "rankings[#{index}]", rank do |r| %>
+        <div class="field1">
+          <label for="Team" class="left inline">Team:</label>
+          <%= r.select :team_id, options_for_select(@teams), autofocus: true %>
+        </div>
+
+        <div class="field1">
+          <label for="Rank" class="left inline">Rank:</label>
+          <%= r.select :rank, [[@rank_number]]%>
+        </div>
+
+        <div class="field1">
+          <label for="Comment" class="left inline">Comment:</label>
+          <%= r.text_field :comment, :size => 150%>
+        </div>
+        <% @rank_number = @rank_number + 1 %>
+    <% end %>
+    <% end %>
+    <% if current_user && current_user.admin? %>
+        <div class="actions">
+          <%= ranking_form.submit "Save Power Rankings" %>
+        </div>
+    <% end %>
+<% end %>
+
+
+<div class="small-3 columns"><label for="email" class="right inline">Email</label></div>
+<div class="small-9 columns"><input type="email" name="email" id="email"></div>

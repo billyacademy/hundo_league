@@ -10,9 +10,10 @@
       <%= f.label :owner %>:
       <%= f.text_field :owner %><br />
     </div>
-
-    <div class="actions">
-      <%= f.submit "Add Team" %>
-    </div>
+    <% if current_user && current_user.admin? %>
+      <div class="actions">
+        <%= f.submit "Add Team" %>
+      </div>
+    <% end %>
 <% end %>
 

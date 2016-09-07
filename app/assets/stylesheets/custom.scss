@@ -1,0 +1,161 @@
+body {
+  background-image: url(asset-path("showbuddy-bg2.jpg"));
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 100% !important;
+  z-index: 0;
+  background-attachment: fixed;
+}
+.boxed {
+  align: center;
+  background: #333333;
+  opacity: .5;
+}
+
+div.transbox {
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-color: #333333;
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 30px 40px;
+  color: #FFFFFF;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+}
+div.transbox h2 {
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+}
+
+div.transbox2 {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  /* margin: 30px 50px; */
+  background-color: #333333;
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox2 h1 {
+  margin: 30px 40px;
+  margin-top: 0px;
+  color: #FFFFFF;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+}
+
+div.center {
+  padding-top: 1px;
+  text-align: center;
+  background-color: #333333;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.7)
+}
+
+div.center-white {
+  padding-top: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .7);
+  opacity: 0.9;
+  color: rgba(0, 0, 0, 0.7)
+
+}
+
+div.center h3, div.center h6 {
+  text-align: center;
+  background-color: #333333;
+  opacity: 0.9;
+  color: white;
+}
+
+div.center h1 {
+  text-align: center;
+  background-color: #333333;
+  opacity: 0.9;
+  color: white;
+}
+
+div.concert-form {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-color: #333333;
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.concert-form h2 {
+  color: white;
+}
+
+label {
+  color: white;
+  opacity: 0.9;
+}
+
+.home-page h1 {
+  font-family: 'Lobster';
+  text-align: center;
+}
+.home-page h3 {
+  font-family: 'Play', sans-serif;
+  text-align: center;
+}
+
+li.name h1 {
+  font-family: 'Play', sans-serif;
+}
+
+nav.top-bar ul li > a {
+  font-family: 'Play', sans-serif;
+}
+
+.content, .content h3 {
+  align: center;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+}
+
+.content a {
+  color: white;
+}
+
+.inner-wrap {
+  min-height: 300px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0rem;
+}
+
+.alert-box {
+  margin-bottom: 0rem;
+}
+
+.venues-buttons a.button, input.alert.button{
+  min-width: 500px;
+  margin-bottom: 0rem;
+  opacity: .9;
+}
+
+.newLabel {
+  width: 200px;
+}
+
+.centeredHomePage {
+  text-align: center;
+}

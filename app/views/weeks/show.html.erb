@@ -1,0 +1,18 @@
+<div class="centeredHomePage">
+  <% if params[:id] == '0' %>
+      <h1><%= "Pre Season Power Rankings" %></h1><br>
+  <% else %>
+      <h1><%= "Week " + params[:id] + " Rankings" %></h1><br>
+  <% end %><br>
+
+
+  <% @week_rankings.each do |ranking| %>
+      <h3><%= ranking[:rank].to_s %></h3>
+      <% @teams.each do |team| %>
+          <% if team[:id] == ranking[:team_id] %>
+              <h3><%= team[:name] + ' ' %></h3>
+          <% end %>
+      <% end %>
+      <%= ranking[:comment] %><br><br>
+  <% end %>
+</div>

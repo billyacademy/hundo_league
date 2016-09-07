@@ -1,0 +1,9 @@
+Weeks Page
+<br><br>
+<% @weeks.each do |x| %>
+    <% if x[0] == 0 %>
+        <%= "Pre Season Power Rankings" %>
+    <% else %>
+        <%= "Week " + x[0].to_s + " Rankings" %><br>
+    <% end %>
+<% end %>
