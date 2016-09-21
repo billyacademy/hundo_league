@@ -19,7 +19,7 @@ class WeeksController < ApplicationController
 
   def show
     @week = Week.where('week_number' => '0')
-    @rankings = Ranking.all.collect { |ranking|  {id: ranking.id, team_id: ranking.team_id, week_id: ranking.week_id, rank: ranking.rank, comment: ranking.comment}}
+    @rankings = Ranking.all.order('rank').collect { |ranking|  {id: ranking.id, team_id: ranking.team_id, week_id: ranking.week_id, rank: ranking.rank, comment: ranking.comment}}
     @week_rankings = []
     @previous_week_rankings = []
     @rankings.each do |ranking|
