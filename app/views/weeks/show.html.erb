@@ -7,12 +7,19 @@
 
 
   <% @week_rankings.each do |ranking| %>
-      <h3><%= ranking[:rank].to_s %></h3>
+      <div class="boxed1" style="border: 1px solid black", style= "background: lightblue">
+      <h3><%= "#" + ranking[:rank].to_s %></h3>
       <% @teams.each do |team| %>
           <% if team[:id] == ranking[:team_id] %>
-              <h3><%= team[:name] + ' ' %></h3>
+              <h3><%= team[:name]%></h3>
+              <% @previous_week_rankings.each do |prev_ranking| %>
+                  <% if prev_ranking[:team_id] == team[:id] %>
+                      <p><%= "(Last Week's Rank " + prev_ranking[:rank].to_s + ")" %></p>
+                  <% end %>
+              <% end %>
           <% end %>
       <% end %>
       <%= ranking[:comment] %><br><br>
+      </div><br>
   <% end %>
 </div>
