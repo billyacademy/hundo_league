@@ -10,10 +10,10 @@
       <table align="center">
         <thead>
           <tr>
-            <th class="rank">Rank</th>
-            <th width="200">Team</th>
-            <th width="150">Commissioner Notes</th>
-            <th width="150">Up/Down</th>
+            <th width="10">Rank</th>
+            <th width="50">Team</th>
+            <th width="500" style="text-align:center">Comments</th>
+            <th width="10">Up/Down</th>
           </tr>
         </thead>
         <% @week_rankings.each do |ranking| %>
@@ -23,7 +23,7 @@
                 <tr>
                   <td><%= "#" + ranking[:rank].to_s %></td>
                   <td><%= team[:name]%></td>
-                  <td align="center"><%= ranking[:comment] %></td>
+                  <td style="text-align:center"><%= ranking[:comment] %></td>
                   <% @previous_week_rankings.each do |prev_ranking| %>  
                     <% if prev_ranking[:team_id] == team[:id] %>
                       <% if ranking[:rank] == prev_ranking[:rank] %>
