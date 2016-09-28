@@ -5,21 +5,42 @@
       <h1><%= "Week " + params[:id] + " Rankings" %></h1><br>
   <% end %><br>
 
-
-  <% @week_rankings.each do |ranking| %>
-      <div class="boxed1" style="border: 1px solid black", style= "background: lightblue">
-      <h3><%= "#" + ranking[:rank].to_s %></h3>
-      <% @teams.each do |team| %>
-          <% if team[:id] == ranking[:team_id] %>
-              <h3><%= team[:name]%></h3>
-              <% @previous_week_rankings.each do |prev_ranking| %>
-                  <% if prev_ranking[:team_id] == team[:id] %>
-                      <p><%= "(Last Week's Rank " + prev_ranking[:rank].to_s + ")" %></p>
-                  <% end %>
-              <% end %>
+  <div class="small-12 large-centered columns">
+    <div class="large-12 columns">
+      <table align="center">
+        <thead>
+          <tr>
+            <th class="rank">Rank</th>
+            <th width="200">Team</th>
+            <th width="150">Commissioner Notes</th>
+            <th width="150">Up/Down</th>
+          </tr>
+        </thead>
+        <% @week_rankings.each do |ranking| %>
+          <% @teams.each do |team| %>
+            <% if team[:id] == ranking[:team_id] %>
+              <tbody>
+                <tr>
+                  <td><%= "#" + ranking[:rank].to_s %></td>
+                  <td><%= team[:name]%></td>
+                  <td align="center"><%= ranking[:comment] %></td>
+                  <% @previous_week_rankings.each do |prev_ranking| %>  
+                    <% if prev_ranking[:team_id] == team[:id] %>
+                      <% if ranking[:rank] == prev_ranking[:rank] %>
+                        <td><b><%= "0" %></b></td>
+                      <% elsif ranking[:rank] < prev_ranking[:rank] %>
+                        <td style="color:green;"><b><%= "+ " + (prev_ranking[:rank] - ranking[:rank]).to_s %></b></td>
+                      <% elsif ranking[:rank] > prev_ranking[:rank] %>
+                        <td style="color:red;"><b><%= "- " + (ranking[:rank] - prev_ranking[:rank] ).to_s %></b></td>
+                      <% end %> 
+                    <% end %> 
+                  <% end %>   
+                </tr>
+              </tbody>
+            <% end %> 
           <% end %>
-      <% end %>
-      <%= ranking[:comment] %><br><br>
-      </div><br>
-  <% end %>
-</div>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div> 
