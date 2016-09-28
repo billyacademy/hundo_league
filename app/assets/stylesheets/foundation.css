@@ -175,11 +175,6 @@ th .rank {
     width: 50px;
 }
 
-       <th width="50">Rank</th>
-            <th width="200">Team</th>
-            <th width="150">Up/Down</th>
-            <th width="150">Commissioner Notes</th>
-
 td, th {
   padding: 6px;
   border: 1px solid #ccc;
