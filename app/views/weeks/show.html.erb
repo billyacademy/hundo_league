@@ -10,10 +10,10 @@
       <table align="center">
         <thead>
           <tr>
-            <th width="10">Rank</th>
-            <th width="50">Team</th>
+            <th width="10" style="text-align:center">Rank</th>
+            <th width="50" style="text-align:center">Team</th>
             <th width="500" style="text-align:center">Comments</th>
-            <th width="10">Up/Down</th>
+            <th width="5" style="text-align:center">+/-</th>
           </tr>
         </thead>
         <% @week_rankings.each do |ranking| %>
@@ -27,11 +27,11 @@
                   <% @previous_week_rankings.each do |prev_ranking| %>  
                     <% if prev_ranking[:team_id] == team[:id] %>
                       <% if ranking[:rank] == prev_ranking[:rank] %>
-                        <td><b><%= "0" %></b></td>
+                        <td style="text-align:center"><b><%= "0" %></b></td>
                       <% elsif ranking[:rank] < prev_ranking[:rank] %>
-                        <td style="color:green;"><b><%= "+ " + (prev_ranking[:rank] - ranking[:rank]).to_s %></b></td>
+                        <td style="text-align:center; color:green;"><b><%= "+ " + (prev_ranking[:rank] - ranking[:rank]).to_s %></b></td>
                       <% elsif ranking[:rank] > prev_ranking[:rank] %>
-                        <td style="color:red;"><b><%= "- " + (ranking[:rank] - prev_ranking[:rank] ).to_s %></b></td>
+                        <td style="text-align:center; color:red;"><b><%= "- " + (ranking[:rank] - prev_ranking[:rank] ).to_s %></b></td>
                       <% end %> 
                     <% end %> 
                   <% end %>   
