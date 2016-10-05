@@ -21,8 +21,8 @@
             <% if team[:id] == ranking[:team_id] %>
               <tbody>
                 <tr>
-                  <td><%= "#" + ranking[:rank].to_s %></td>
-                  <td><%= team[:name]%></td>
+                  <td style="text-align:center"><%= "#" + ranking[:rank].to_s %></td>
+                  <td style="text-align:center"><%= team[:name]%></td>
                   <td style="text-align:center"><%= ranking[:comment] %></td>
                   <% @previous_week_rankings.each do |prev_ranking| %>  
                     <% if prev_ranking[:team_id] == team[:id] %>
