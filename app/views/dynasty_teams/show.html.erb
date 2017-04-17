@@ -5,8 +5,8 @@
   .col-4{float:left; width:16.6%;}
   .col-5{float:left; width:16.6%;}
   .col-6{float:left; width:16.6%;}
-    h1{font-size:100px}
-    h2{font-size:75px}
+    h1{font-size:50px}
+    h2{font-size:30px}
   .playerbox{border:outset}
 </style>
 <div id="TEAM_NAME" align="center"><h1><%= @dynasty_team.team_name %></h1></div>
@@ -16,9 +16,9 @@
   <% @quarterbacks.each do |qb| %>
       <div class="playerbox">
         <% if qb['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+qb['esbid']+'.png', size: "100x100") %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+qb['esbid']+'.png', size: "75x75") %><br>
         <% end %>
-        <%= qb.name %><br>
+        <%= qb.name %>,
         <%= qb.position %><br>
         <%= qb.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+qb['name'].delete(' ')+'/'+qb['player_id'].to_s+'/profile') %><br>
@@ -36,9 +36,9 @@
     <% @running_backs.each do |rb| %>
       <div class="playerbox">
         <% if rb['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+rb['esbid']+'.png', size: "100x100") %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+rb['esbid']+'.png', size: "75x75") %><br>
         <% end %>
-        <%= rb.name %><br>
+        <%= rb.name %>,
         <%= rb.position %><br>
         <%= rb.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+rb['name'].delete(' ')+'/'+rb['player_id'].to_s+'/profile') %><br>
@@ -56,9 +56,9 @@
     <% @wide_receivers.each do |wr| %>
       <div class="playerbox">
         <% if wr['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+wr['esbid']+'.png', size: "100x100") %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+wr['esbid']+'.png', size: "75x75") %><br>
         <% end %>
-        <%= wr.name %><br>
+        <%= wr.name %>,
         <%= wr.position %><br>
         <%= wr.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+wr['name'].delete(' ')+'/'+wr['player_id'].to_s+'/profile') %><br>
@@ -76,9 +76,9 @@
     <% @tight_ends.each do |te| %>
       <div class="playerbox">
         <% if te['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+te['esbid']+'.png', size: "100x100") %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+te['esbid']+'.png', size: "75x75") %><br>
         <% end %>
-        <%= te.name %><br>
+        <%= te.name %>,
         <%= te.position %><br>
         <%= te.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+te['name'].delete(' ')+'/'+te['player_id'].to_s+'/profile') %><br>
@@ -96,9 +96,9 @@
     <% @kickers.each do |k| %>
       <div class="playerbox">
         <% if k['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+k['esbid']+'.png', size: "100x100") %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+k['esbid']+'.png', size: "75x75") %><br>
         <% end %>
-        <%= k.name %><br>
+        <%= k.name %>,
         <%= k.position %><br>
         <%= k.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+k['name'].delete(' ')+'/'+k['player_id'].to_s+'/profile') %><br>
@@ -116,9 +116,9 @@
       <% @defenses.each do |defense| %>
         <div class="playerbox">
           <% if defense['esbid'] != nil %>
-              <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png', size: "100x100") %><br>
+              <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png', size: "75x75") %><br>
           <% end %>
-          <%= defense.name %><br>
+          <%= defense.name %>,
           <%= defense.position %><br>
           <%= defense.teamAbbr %><br>
           Current Salary: <%= @player_contract.where(player_id: defense[:player_id]).first().current_salary %>
