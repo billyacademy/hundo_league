@@ -16,7 +16,7 @@
   <% @quarterbacks.each do |qb| %>
       <div class="playerbox">
         <% if qb['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+qb['esbid']+'.png') %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+qb['esbid']+'.png', size: "100x100") %><br>
         <% end %>
         <%= qb.name %><br>
         <%= qb.position %><br>
@@ -36,7 +36,7 @@
     <% @running_backs.each do |rb| %>
       <div class="playerbox">
         <% if rb['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+rb['esbid']+'.png') %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+rb['esbid']+'.png', size: "100x100") %><br>
         <% end %>
         <%= rb.name %><br>
         <%= rb.position %><br>
@@ -56,7 +56,7 @@
     <% @wide_receivers.each do |wr| %>
       <div class="playerbox">
         <% if wr['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+wr['esbid']+'.png') %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+wr['esbid']+'.png', size: "100x100") %><br>
         <% end %>
         <%= wr.name %><br>
         <%= wr.position %><br>
@@ -76,7 +76,7 @@
     <% @tight_ends.each do |te| %>
       <div class="playerbox">
         <% if te['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+te['esbid']+'.png') %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+te['esbid']+'.png', size: "100x100") %><br>
         <% end %>
         <%= te.name %><br>
         <%= te.position %><br>
@@ -96,7 +96,7 @@
     <% @kickers.each do |k| %>
       <div class="playerbox">
         <% if k['esbid'] != nil %>
-            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+k['esbid']+'.png') %><br>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+k['esbid']+'.png', size: "100x100") %><br>
         <% end %>
         <%= k.name %><br>
         <%= k.position %><br>
@@ -116,7 +116,7 @@
       <% @defenses.each do |defense| %>
         <div class="playerbox">
           <% if defense['esbid'] != nil %>
-              <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png') %><br>
+              <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png', size: "100x100") %><br>
           <% end %>
           <%= defense.name %><br>
           <%= defense.position %><br>
