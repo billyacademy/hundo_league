@@ -54,6 +54,8 @@ players2016['players'].each do |player|
     )
     new_player.save
   end
+end
+
 
 JONO = {email:'jono.baumann@gmail.com', team_name:'Bye Weekers'}
 BILLY = {email:'klone182@gmail.com', team_name:'Thud Butt and The Lost Boys'}
