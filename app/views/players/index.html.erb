@@ -1,0 +1,19 @@
+<%= form_tag players_path, class: "form-inline", method: :get do %>
+    <%= text_field_tag :query, params[:query], class: "form-control" %>
+<% end %>
+
+<%= submit_tag "Search", class: "btn btn-primary" %>
+<% if params[:query].present? %>
+    <%= link_to "clear", players_path %>
+<% end %>
+<div class="centeredHomePage">
+  <% @players.first(10).each do |player| %>
+    <%=  player.name %><br>
+      <% if player.esbid != nil && player.name != nil %>
+          <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+player.esbid+'.png') %><br>
+          External Player Page: <%= link_to('NFL Profile Page', 'http://www.nfl.com/player/'+player.name.delete(' ')+'/'+player.id.to_s+'/profile') %><br>
+          WDD Player Page: <%= link_to(player.name, player_path(player.id))%><br><br>
+      <% end %>
+      <br>
+  <% end %>
+</div>

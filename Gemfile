@@ -56,7 +56,10 @@ gem 'teaspoon-jasmine'
 gem 'devise'
 gem 'foundation-rails'
 gem 'foundation'
-
+gem 'httparty'
+gem 'searchkick'
+gem 'elasticsearch'
+gem 'will_paginate'
 group :development do
   gem 'rails_layout'
 end

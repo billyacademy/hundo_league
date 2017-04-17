@@ -1,0 +1,12 @@
+customview page
+
+<% @players_list.each do |player| %>
+    <%= "#" +player['name'] %><br>
+    <%= "PlayerContract.create(player_id: Player.where(player_id:" +player['player_id'].to_s+ ").first().player_id, "%><br>
+    <%= "dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,"%><br>
+    <%= "contract_type_id:ContractType.where(name:INITIAL).first().id, "%><br>
+    <%= "first_year: TWENTY_FIFTEEN,"%><br>
+    <%= "is_top_fourteen:TRUE,"%><br>
+    <%= "current_salary:5)" %><br><br>
+
+<% end %>

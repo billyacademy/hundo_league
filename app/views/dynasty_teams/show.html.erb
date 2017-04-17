@@ -1,0 +1,131 @@
+<style>
+  .col-1{float:left; width:16.6%;}
+  .col-2{float:left; width:16.6%;}
+  .col-3{float:left; width:16.6%;}
+  .col-4{float:left; width:16.6%;}
+  .col-5{float:left; width:16.6%;}
+  .col-6{float:left; width:16.6%;}
+    h1{font-size:100px}
+    h2{font-size:75px}
+  .playerbox{border:outset}
+</style>
+<div id="TEAM_NAME" align="center"><h1><%= @dynasty_team.team_name %></h1></div>
+<div id="OWNER_NAME" align="center"><h2><%= @owner.first_name %> <%=@owner.last_name %></h2></div>
+<div class="col-1" width=16.66% class="float-left">
+  <h3>QUARTERBACKS (<%= @quarterbacks.count() %>)</h3>
+  <% @quarterbacks.each do |qb| %>
+      <div class="playerbox">
+        <% if qb['esbid'] != nil %>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+qb['esbid']+'.png') %><br>
+        <% end %>
+        <%= qb.name %><br>
+        <%= qb.position %><br>
+        <%= qb.teamAbbr %><br>
+        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+qb['name'].delete(' ')+'/'+qb['player_id'].to_s+'/profile') %><br>
+        Current Salary: <%= @player_contract.where(player_id: qb[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: qb[:player_id]).first().is_top_fourteen %>
+            <br>Top 14 Player
+        <% end %>
+        <br>First Year Under Contract: <%= @player_contract.where(player_id: qb[:player_id]).first().first_year %>
+      </div>
+  <% end %>
+</div>
+
+<div class="col-2" width=16.66% class="float-left">
+  <h3>RUNNINGBACKS (<%= @running_backs.count() %>)</h3>
+    <% @running_backs.each do |rb| %>
+      <div class="playerbox">
+        <% if rb['esbid'] != nil %>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+rb['esbid']+'.png') %><br>
+        <% end %>
+        <%= rb.name %><br>
+        <%= rb.position %><br>
+        <%= rb.teamAbbr %><br>
+        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+rb['name'].delete(' ')+'/'+rb['player_id'].to_s+'/profile') %><br>
+        Current Salary: <%= @player_contract.where(player_id: rb[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: rb[:player_id]).first().is_top_fourteen %>
+            <br>Top 14 Player
+        <% end %>
+        <br>First Year Under Contract: <%= @player_contract.where(player_id: rb[:player_id]).first().first_year %>
+      </div>
+    <% end %>
+</div>
+
+<div class="col-3" width=16.66% class="float-left">
+  <h3>WIDE RECEIVERS (<%= @wide_receivers.count() %>)</h3>
+    <% @wide_receivers.each do |wr| %>
+      <div class="playerbox">
+        <% if wr['esbid'] != nil %>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+wr['esbid']+'.png') %><br>
+        <% end %>
+        <%= wr.name %><br>
+        <%= wr.position %><br>
+        <%= wr.teamAbbr %><br>
+        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+wr['name'].delete(' ')+'/'+wr['player_id'].to_s+'/profile') %><br>
+        Current Salary: <%= @player_contract.where(player_id: wr[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: wr[:player_id]).first().is_top_fourteen %>
+            <br>Top 14 Player
+        <% end %>
+        <br>First Year Under Contract: <%= @player_contract.where(player_id: wr[:player_id]).first().first_year %>
+      </div>
+    <% end %>
+</div>
+
+<div class="col-4" width=16.66% class="float-left">
+  <h3>TIGHT ENDS (<%= @tight_ends.count() %>)</h3>
+    <% @tight_ends.each do |te| %>
+      <div class="playerbox">
+        <% if te['esbid'] != nil %>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+te['esbid']+'.png') %><br>
+        <% end %>
+        <%= te.name %><br>
+        <%= te.position %><br>
+        <%= te.teamAbbr %><br>
+        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+te['name'].delete(' ')+'/'+te['player_id'].to_s+'/profile') %><br>
+        Current Salary: <%= @player_contract.where(player_id: te[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: te[:player_id]).first().is_top_fourteen %>
+            <br>Top 14 Player
+        <% end %>
+        <br>First Year Under Contract: <%= @player_contract.where(player_id: te[:player_id]).first().first_year %>
+      </div>
+    <% end %>
+</div>
+
+<div class="col-5" width=16.66% class="float-left">
+  <h3>KICKERS (<%= @kickers.count() %>)</h3>
+    <% @kickers.each do |k| %>
+      <div class="playerbox">
+        <% if k['esbid'] != nil %>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+k['esbid']+'.png') %><br>
+        <% end %>
+        <%= k.name %><br>
+        <%= k.position %><br>
+        <%= k.teamAbbr %><br>
+        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+k['name'].delete(' ')+'/'+k['player_id'].to_s+'/profile') %><br>
+        Current Salary: <%= @player_contract.where(player_id: k[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: k[:player_id]).first().is_top_fourteen %>
+            <br>Top 14 Player
+        <% end %>
+        <br>First Year Under Contract: <%= @player_contract.where(player_id: k[:player_id]).first().first_year %>
+      </div>
+    <% end %>
+</div>
+
+<div class="col-6" width=16.66% class="float-left">
+  <h3>DEFENSES (<%= @defenses.count() %>)</h3>
+      <% @defenses.each do |defense| %>
+        <div class="playerbox">
+          <% if defense['esbid'] != nil %>
+              <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png') %><br>
+          <% end %>
+          <%= defense.name %><br>
+          <%= defense.position %><br>
+          <%= defense.teamAbbr %><br>
+          Current Salary: <%= @player_contract.where(player_id: defense[:player_id]).first().current_salary %>
+          <% if @player_contract.where(player_id: defense[:player_id]).first().is_top_fourteen %>
+              <br>Top 14 Player
+          <% end %>
+          <br>First Year Under Contract: <%= @player_contract.where(player_id: defense[:player_id]).first().first_year %>
+        </div>
+      <% end %>
+</div>

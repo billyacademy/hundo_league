@@ -1,0 +1,3 @@
+class DynastyTeam < ApplicationRecord
+
+end

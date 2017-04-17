@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  require '/app/services/dump_data_service.rb'
+
   def index
     @teams = Team.all.collect { |team| [team.name, team.owner] }
   end

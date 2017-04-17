@@ -1,0 +1,3 @@
+<% @dynasty_teams.each do |team| %>
+    <div id=team.id align="center"><%= link_to(team.team_name, dynasty_team_path(team.id))%></div><br>
+<% end %>

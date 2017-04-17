@@ -1,0 +1,15 @@
+<%= @player.name %><br>
+<%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+@player.esbid+'.png') %><br>
+<%= @player.position %><br>
+<%= @player.teamAbbr %><br>
+<br>
+<br>
+<% if @team != nil %>
+  SALARY: <%= @player_contract.current_salary %><br>
+  First Year Under Contract: <%= @player_contract.first_year %><br>
+  Type of Contract: <%= @contract_type.name %><br>
+  WDD Team: <%= link_to(@team.team_name, dynasty_team_path(@team.id)) %><br>
+  <% if @player_contract.is_top_fourteen %>
+      <p>This Player has been Top 14 at his position</p><br>
+  <% end %>
+<% end %>

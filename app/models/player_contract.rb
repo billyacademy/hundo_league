@@ -1,0 +1,3 @@
+class PlayerContract < ApplicationRecord
+
+end
