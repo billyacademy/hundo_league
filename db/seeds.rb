@@ -5,8 +5,55 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-dump = DumpDataService.new
-dump.dump_players
+players2014 = HTTParty.get("http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&season=2014&format=json")
+players2014['players'].each do |player|
+  if Player.exists?(:player_id => player['id'])
+  else
+    new_player = Player.new(
+        player_id:player['id'],
+        esbid:player['esbid'],
+        gsisPlayerId:player['gsisPlayerId'],
+        name:player['name'],
+        position:player['position'],
+        teamAbbr:player['teamAbbr'],
+        stats_id:nil
+    )
+    new_player.save
+  end
+end
+
+players2015 = HTTParty.get("http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&season=2015&format=json")
+players2015['players'].each do |player|
+  if Player.exists?(:player_id => player['id'])
+  else
+    new_player = Player.new(
+        player_id:player['id'],
+        esbid:player['esbid'],
+        gsisPlayerId:player['gsisPlayerId'],
+        name:player['name'],
+        position:player['position'],
+        teamAbbr:player['teamAbbr'],
+        stats_id:nil
+    )
+    new_player.save
+  end
+end
+
+players2016 = HTTParty.get("http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&format=json")
+players2016['players'].each do |player|
+  if Player.exists?(:player_id => player['id'])
+  else
+    new_player = Player.new(
+        player_id:player['id'],
+        esbid:player['esbid'],
+        gsisPlayerId:player['gsisPlayerId'],
+        name:player['name'],
+        position:player['position'],
+        teamAbbr:player['teamAbbr'],
+        stats_id:nil
+    )
+    new_player.save
+  end
 
 JONO = {email:'jono.baumann@gmail.com', team_name:'Bye Weekers'}
 BILLY = {email:'klone182@gmail.com', team_name:'Thud Butt and The Lost Boys'}
