@@ -1,5 +1,7 @@
 <%= @player.name %><br>
-<%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+@player.esbid+'.png') %><br>
+<% if @player.esbid != nil %>
+  <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+@player.esbid+'.png') %><br>
+<%	 end %>
 <%= @player.position %><br>
 <%= @player.teamAbbr %><br>
 <br>

@@ -31,8 +31,8 @@ class PlayersController < ApplicationController
   def show
     @player = Player.where(id:params[:id]).first()
     @player_contract = PlayerContract.where(player_id:@player[:player_id]).first()
-    @contract_type = ContractType.where(id:@player_contract.contract_type_id).first()
     if @player_contract != nil
+      @contract_type = ContractType.where(id:@player_contract.contract_type_id).first()
       @team = DynastyTeam.where(id:@player_contract.dynasty_team_id).first()
     end
   end
