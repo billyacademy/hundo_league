@@ -12,7 +12,23 @@ class PlayersController < ApplicationController
   end
 
   def customview
-
+    @count = 1
+    @draft_picks = [
+    'DAN',
+    'ALEX',
+    'GOAT',
+    'ROB',
+    'JONO',
+    'ADAM',
+    'NATE',
+    'BILLY',
+    'PEALER',
+    'BRENDAN',
+    'JUSTIN',
+    'BARD',
+    'FISCHETTI',
+    'DEREK'
+    ]
   end
 
   def new

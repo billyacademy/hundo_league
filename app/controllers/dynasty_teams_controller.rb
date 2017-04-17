@@ -28,25 +28,13 @@ class DynastyTeamsController < ApplicationController
     @kickers = Player.where(player_id:PlayerContract.where(dynasty_team_id:@dynasty_team[:id]).pluck(:player_id), position:'K')
     @defenses = Player.where(player_id:PlayerContract.where(dynasty_team_id:@dynasty_team[:id]).pluck(:player_id), position:'DEF')
     @players = Player.where(player_id:PlayerContract.where(dynasty_team_id:@dynasty_team[:id]).pluck(:player_id))
-
-    #@player_contracts = Player.where(player_id:PlayerContract.where(dynasty_team_id:@dynasty_team[:id])
-    # @player_contracts.each do |player_contract|
-    #   binding.pry
-    # end
-    # binding.pry
-    # @player_contracts = PlayerContract.where()
-    # @week = Week.where('week_number' => '0')
-    # @rankings = Ranking.all.order('rank').collect { |ranking|  {id: ranking.id, team_id: ranking.team_id, week_id: ranking.week_id, rank: ranking.rank, comment: ranking.comment}}
-    # @week_rankings = []
-    # @previous_week_rankings = []
-    # @rankings.each do |ranking|
-    #   if ranking[:week_id] == params[:id].to_i
-    #     @week_rankings.push(ranking)
-    #   elsif ranking[:week_id] == params[:id].to_i - 1
-    #     @previous_week_rankings.push(ranking)
-    #   end
-    # end
-    # @teams = Team.all.collect { |team| {id: team.id, name: team.name, owner: team.owner}}
+    @draft_picks = DraftPick.where(dynasty_team_id:@dynasty_team[:id])
+    @current_year = Date.today.year
+    @next_year = @current_year + 1
+    @two_years_from_now = @next_year + 1
+    @draft_picks_this_year = DraftPick.where(dynasty_team_id:@dynasty_team[:id], year:@current_year)
+    @draft_picks_next_year = DraftPick.where(dynasty_team_id:@dynasty_team[:id], year:@next_year)
+    @draft_picks_two_years_from_now = DraftPick.where(dynasty_team_id:@dynasty_team[:id], year:@two_years_from_now)
   end
 
   def player_params

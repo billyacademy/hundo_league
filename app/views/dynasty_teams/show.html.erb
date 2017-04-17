@@ -99,7 +99,7 @@
 </div>
 
 <div class="col-5" width=16.66% class="float-left">
-  <h3 align="center">KICKERS (<%= @kickers.count() %>)</h3>
+  <h3 align="center">K (<%= @kickers.count() %>) DEFENSES (<%= @defenses.count() %>)</h3>
     <% @kickers.each do |k| %>
       <div class="playerbox">
         <% if k['esbid'] != nil %>
@@ -117,16 +117,12 @@
         </p>
       </div>
     <% end %>
-</div>
-
-<div class="col-6" width=16.66% class="float-left">
-  <h3 align="center">DEFENSES (<%= @defenses.count() %>)</h3>
-      <% @defenses.each do |defense| %>
-        <div class="playerbox">
-          <% if defense['esbid'] != nil %>
-              <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png', size: "35x35") %><br>
-          <% end %>
-          <p><%= defense.name %>,
+    <% @defenses.each do |defense| %>
+      <div class="playerbox">
+        <% if defense['esbid'] != nil %>
+            <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+defense['esbid']+'.png', size: "35x35") %><br>
+        <% end %>
+        <p><%= defense.name %>,
           <%= defense.position %><br>
           <%= defense.teamAbbr %><br>
           Current Salary: <%= @player_contract.where(player_id: defense[:player_id]).first().current_salary %>
@@ -134,7 +130,43 @@
               <br>Top 14 Player
           <% end %>
           <br>First Year Under Contract: <%= @player_contract.where(player_id: defense[:player_id]).first().first_year %>
-          </p>
-        </div>
-      <% end %>
+        </p>
+      </div>
+  <% end %>
+</div>
+
+<div class="col-6" width=16.66% class="float-left">
+  <h3 align="center"><%= @current_year %> Draft Picks</h3>
+  <% @draft_picks_this_year.each do |pick| %>
+      <div class="playerbox">
+        Round: <%= pick.round %> -
+        <% if pick.pick != nil %>
+            Pick:<%= pick.pick %><br>
+        <% elsif pick.comments != 'None'  %>
+            <%= pick.comments %>
+        <% end %>
+      </div>
+  <% end %>
+  <h3 align="center"><%= @next_year %> Draft Picks</h3>
+  <% @draft_picks_next_year.each do |pick| %>
+      <div class="playerbox">
+        Round: <%= pick.round %> -
+        <% if pick.pick != nil %>
+            Pick:<%= pick.pick %><br>
+        <% elsif pick.comments != 'None'  %>
+            <%= pick.comments %>
+        <% end %>
+      </div>
+  <% end %>
+  <h3 align="center"><%= @two_years_from_now %> Draft Picks</h3>
+  <% @draft_picks_two_years_from_now.each do |pick| %>
+      <div class="playerbox">
+        Round: <%= pick.round %> -
+        <% if pick.pick != nil %>
+            Pick:<%= pick.pick %><br>
+        <% elsif pick.comments != 'None'  %>
+            <%= pick.comments %>
+        <% end %>
+      </div>
+  <% end %>
 </div>

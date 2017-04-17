@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414190956) do
+ActiveRecord::Schema.define(version: 20170417152751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20170414190956) do
   create_table "contract_types", force: :cascade do |t|
     t.string  "name"
     t.integer "length"
+  end
+
+  create_table "draft_picks", force: :cascade do |t|
+    t.integer "dynasty_team_id"
+    t.integer "year"
+    t.integer "round"
+    t.integer "pick"
+    t.text    "comments"
   end
 
   create_table "dynasty_teams", force: :cascade do |t|
