@@ -8,7 +8,7 @@
     h1{font-size:25px}
     h2{font-size:20px}
     h3{font-size:10px}
-    p{font-size:8px}
+    p{font-size:10px}
   .playerbox{border:outset}
 </style>
 <div id="TEAM_NAME" align="center"><h1><%= @dynasty_team.team_name %></h1></div>
@@ -24,7 +24,12 @@
         <%= qb.position %><br>
         <%= qb.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+qb['name'].delete(' ')+'/'+qb['player_id'].to_s+'/profile') %><br>
-        Current Salary: <%= @player_contract.where(player_id: qb[:player_id]).first().current_salary %>
+        Current Salary: $<%= @player_contract.where(player_id: qb[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: qb[:player_id]).first().current_salary < 15 %>
+              -- Next Year Proj: $<%= @player_contract.where(player_id: qb[:player_id]).first().current_salary + 1 %>
+        <% else %>
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: qb[:player_id]).first().current_salary *1.1).round%>)
+        <% end %>
         <% if @player_contract.where(player_id: qb[:player_id]).first().is_top_fourteen %>
             <br>Top 14 Player
         <% end %>
@@ -46,7 +51,12 @@
         <%= rb.position %><br>
         <%= rb.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+rb['name'].delete(' ')+'/'+rb['player_id'].to_s+'/profile') %><br>
-        Current Salary: <%= @player_contract.where(player_id: rb[:player_id]).first().current_salary %>
+        Current Salary: $<%= @player_contract.where(player_id: rb[:player_id]).first().current_salary %>
+          <% if @player_contract.where(player_id: rb[:player_id]).first().current_salary < 15 %>
+              -- Next Year Proj: $<%= @player_contract.where(player_id: rb[:player_id]).first().current_salary + 1 %>
+          <% else %>
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: rb[:player_id]).first().current_salary * 1.1).round %>
+          <% end %>
         <% if @player_contract.where(player_id: rb[:player_id]).first().is_top_fourteen %>
             <br>Top 14 Player
         <% end %>
@@ -67,8 +77,13 @@
         <%= wr.position %><br>
         <%= wr.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+wr['name'].delete(' ')+'/'+wr['player_id'].to_s+'/profile') %><br>
-        Current Salary: <%= @player_contract.where(player_id: wr[:player_id]).first().current_salary %>
-        <% if @player_contract.where(player_id: wr[:player_id]).first().is_top_fourteen %>
+        Current Salary: $<%= @player_contract.where(player_id: wr[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: wr[:player_id]).first().current_salary < 15 %>
+              -- Next Year Proj: $<%= @player_contract.where(player_id: wr[:player_id]).first().current_salary + 1 %>
+        <% else %>
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: wr[:player_id]).first().current_salary * 1.1).round %>
+        <% end %>
+          <% if @player_contract.where(player_id: wr[:player_id]).first().is_top_fourteen %>
             <br>Top 14 Player
         <% end %>
         <br>First Year Under Contract: <%= @player_contract.where(player_id: wr[:player_id]).first().first_year %>
@@ -88,7 +103,12 @@
         <%= te.position %><br>
         <%= te.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+te['name'].delete(' ')+'/'+te['player_id'].to_s+'/profile') %><br>
-        Current Salary: <%= @player_contract.where(player_id: te[:player_id]).first().current_salary %>
+        Current Salary: $<%= @player_contract.where(player_id: te[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: te[:player_id]).first().current_salary < 15 %>
+              -- Next Year Proj: $<%= @player_contract.where(player_id: te[:player_id]).first().current_salary + 1 %>
+        <% else %>
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: te[:player_id]).first().current_salary * 1.1).round %>
+        <% end %>
         <% if @player_contract.where(player_id: te[:player_id]).first().is_top_fourteen %>
             <br>Top 14 Player
         <% end %>
@@ -109,9 +129,14 @@
         <%= k.position %><br>
         <%= k.teamAbbr %><br>
         <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+k['name'].delete(' ')+'/'+k['player_id'].to_s+'/profile') %><br>
-        Current Salary: <%= @player_contract.where(player_id: k[:player_id]).first().current_salary %>
+        Current Salary: $<%= @player_contract.where(player_id: k[:player_id]).first().current_salary %>
+        <% if @player_contract.where(player_id: k[:player_id]).first().current_salary < 15 %>
+              -- Next Year Proj: $<%= @player_contract.where(player_id: k[:player_id]).first().current_salary + 1 %>
+        <% else %>
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: k[:player_id]).first().current_salary * 1.1).round %>
+        <% end %>
         <% if @player_contract.where(player_id: k[:player_id]).first().is_top_fourteen %>
-            <br>Top 14 Player
+          <br>Top 14 Player
         <% end %>
         <br>First Year Under Contract: <%= @player_contract.where(player_id: k[:player_id]).first().first_year %>
         </p>
@@ -125,7 +150,12 @@
         <p><%= defense.name %>,
           <%= defense.position %><br>
           <%= defense.teamAbbr %><br>
-          Current Salary: <%= @player_contract.where(player_id: defense[:player_id]).first().current_salary %>
+          Current Salary: $<%= @player_contract.where(player_id: defense[:player_id]).first().current_salary %>
+          <% if @player_contract.where(player_id: defense[:player_id]).first().current_salary < 15 %>
+              -- Next Year Proj: $<%= @player_contract.where(player_id: defense[:player_id]).first().current_salary + 1 %>
+          <% else %>
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: rb[:player_id]).first().current_salary * 1.1).round %>
+          <% end %>
           <% if @player_contract.where(player_id: defense[:player_id]).first().is_top_fourteen %>
               <br>Top 14 Player
           <% end %>
@@ -139,34 +169,65 @@
   <h3 align="center"><%= @current_year %> Draft Picks</h3>
   <% @draft_picks_this_year.each do |pick| %>
       <div class="playerbox">
-        Round: <%= pick.round %> -
-        <% if pick.pick != nil %>
-            Pick:<%= pick.pick %><br>
-        <% elsif pick.comments != 'None'  %>
-            <%= pick.comments %>
-        <% end %>
+        <div align="center">
+          Round: <%= pick.round %>
+          <% if pick.pick != nil %>
+              - Pick: <%= pick.pick %><br>
+          <% elsif pick.comments != 'None'  %>
+              - <%= pick.comments %>
+          <% end %>
+        </div>
       </div>
   <% end %>
   <h3 align="center"><%= @next_year %> Draft Picks</h3>
   <% @draft_picks_next_year.each do |pick| %>
       <div class="playerbox">
-        Round: <%= pick.round %> -
+        <div align="center">
+        Round: <%= pick.round %>
         <% if pick.pick != nil %>
-            Pick:<%= pick.pick %><br>
+            - Pick: <%= pick.pick %><br>
         <% elsif pick.comments != 'None'  %>
-            <%= pick.comments %>
+            - <%= pick.comments %>
         <% end %>
+        </div>
       </div>
   <% end %>
   <h3 align="center"><%= @two_years_from_now %> Draft Picks</h3>
   <% @draft_picks_two_years_from_now.each do |pick| %>
       <div class="playerbox">
-        Round: <%= pick.round %> -
-        <% if pick.pick != nil %>
-            Pick:<%= pick.pick %><br>
-        <% elsif pick.comments != 'None'  %>
-            <%= pick.comments %>
-        <% end %>
+        <div align="center">
+          Round: <%= pick.round %>
+          <% if pick.pick != nil %>
+              - Pick: <%= pick.pick %><br>
+          <% elsif pick.comments != 'None'  %>
+              - <%= pick.comments %>
+          <% end %>
+        </div>
       </div>
+  <% end %>
+  <h3 align="center">Salary Cap -<%=  @current_year %></h3>
+  <div class="playerbox">
+    <div align="center">Cost of Players: $<%= @total_player_cost %></div>
+  </div>
+  <div class="playerbox">
+    <div align="center">Net Adjustment: $<%= @net_adjustment %></div>
+  </div>
+  <div class="playerbox">
+    <div align="center">Current Cap: $<%= @total_player_cost-@net_adjustment %></div>
+  </div>
+  <div class="playerbox">
+    <div align="center">Net Cap Space: <%= 300-(@total_player_cost-@net_adjustment) %></div>
+  </div>
+  <h3 align="center"> Cap Transactions </h3>
+  <% @salary_cap_adjustments.each do |cap_adjustment| %>
+    <div class="playerbox">
+      <div align="center">
+      <% if cap_adjustment.cap_sender_id == @dynasty_team.id %>
+          <%= cap_adjustment.comments %><br>
+      <% else %>
+          <%= cap_adjustment.comments %><br>
+      <% end %>
+      </div>
+    </div>
   <% end %>
 </div>

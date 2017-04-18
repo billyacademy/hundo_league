@@ -154,7 +154,7 @@ FRANCHISE = 'Franchise'
 #                       contract_type_id:ContractType.where(name:INITIAL).first().id,
 #                       first_year: TWENTY_FIFTEEN,
 #                       is_top_fourteen:FALSE,
-#                       current_salary:8)
+#                       current_salary:73)
 # #Brandin Cooks
 # PlayerContract.create(player_id: Player.where(player_id:2543498).first().player_id,
 #                       dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
@@ -229,7 +229,7 @@ FRANCHISE = 'Franchise'
 #                       contract_type_id:ContractType.where(name:FIRST).first().id,
 #                       first_year: TWENTY_SIXTEEN,
 #                       is_top_fourteen:FALSE,
-#                       current_salary:6)
+#                       current_salary:5)
 # #Andy Dalton
 # PlayerContract.create(player_id: Player.where(player_id:2495143).first().player_id,
 #                       dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
@@ -286,7 +286,7 @@ FRANCHISE = 'Franchise'
 #                       contract_type_id:ContractType.where(name:INITIAL).first().id,
 #                       first_year: TWENTY_FOURTEEN,
 #                       is_top_fourteen:FALSE,
-#                       current_salary:33)
+#                       current_salary:39)
 #
 #
 # #TAPPLY
@@ -2366,13 +2366,6 @@ FRANCHISE = 'Franchise'
 #                       is_top_fourteen:FALSE,
 #                       current_salary:5)
 #
-# #Zach Miller
-# PlayerContract.create(player_id: Player.where(player_id:2507170).first().player_id,
-#                       dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-#                       contract_type_id:ContractType.where(name:INITIAL).first().id,
-#                       first_year: TWENTY_FIFTEEN,
-#                       is_top_fourteen:TRUE,
-#                       current_salary:5)
 # #Le'Veon Bell
 # PlayerContract.create(player_id: Player.where(player_id:2540175).first().player_id,
 #                       dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
@@ -2381,809 +2374,1036 @@ FRANCHISE = 'Franchise'
 #                       is_top_fourteen:TRUE,
 #                       current_salary:63)
 #
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:4,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:5,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:6,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:7,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:8,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:9,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:10,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:11,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:12,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:13,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2017,
-                 round:1,
-                 pick:14,
-                 comments:'None')
-
-#Round 2
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:4,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:5,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:6,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:7,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:8,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:9,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:10,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:11,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:12,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:13,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2017,
-                 round:2,
-                 pick:14,
-                 comments:'None')
-
-#Round 3
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:4,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:5,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:6,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:7,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:8,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:9,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:10,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:11,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:12,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:13,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2017,
-                 round:3,
-                 pick:14,
-                 comments:'None')
-
-#2018
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'From Rob')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'From Billy')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'From Pealer Through Rob')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'From Fischetti Through Rob')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2018,
-                 round:1,
-                 comments:'None')
-
-
-#2018 RD 2
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'From Goat')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'From Rob')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'from Pealer through Rob')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2018,
-                 round:2,
-                 comments:'None')
-
-#2018 3rd Round
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'From Decker')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'Bard can swap for this pick')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'From Pealer')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'Swap Option with Billy')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'From Fischetti')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2018,
-                 round:3,
-                 comments:'None')
-
-#2019 Picks
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-    year:2019,
-    round:1,
-    comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2019,
-                 round:1,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2019,
-                 round:2,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
-                 year:2019,
-                 round:3,
-                 comments:'None')
-
-
-
-
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:4,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:5,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:6,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:7,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:8,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:9,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:10,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:11,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:12,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:13,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2017,
+#                  round:1,
+#                  pick:14,
+#                  comments:'None')
+#
+# #Round 2
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:4,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:5,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:6,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:7,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:8,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:9,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:10,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:11,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:12,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:13,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2017,
+#                  round:2,
+#                  pick:14,
+#                  comments:'None')
+#
+# #Round 3
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:4,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:5,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:6,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:7,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:8,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:9,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:10,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:11,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:12,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:13,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2017,
+#                  round:3,
+#                  pick:14,
+#                  comments:'None')
+#
+# #2018
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'From Rob')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'From Billy')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'From Pealer Through Rob')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'From Fischetti Through Rob')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2018,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# #2018 RD 2
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'From Goat')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'From Rob')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'from Pealer through Rob')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2018,
+#                  round:2,
+#                  comments:'None')
+#
+# #2018 3rd Round
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'From Decker')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'Bard can swap for this pick')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'From Pealer')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'Swap Option with Billy')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'From Fischetti')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2018,
+#                  round:3,
+#                  comments:'None')
+#
+# #2019 Picks
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#     year:2019,
+#     round:1,
+#     comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2019,
+#                  round:1,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2019,
+#                  round:2,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+#
+#
+# DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+#                  year:2019,
+#                  round:3,
+#                  comments:'None')
+
+# 2018
+# Adam
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Adam sends $2 to Justin"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:10,
+                           comments: "Fischetti sends $10 to Alex"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ALEX[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:1,
+                           comments: "Dan sends $1 to Alex"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:5,
+                           comments: "Pealer sends $1 to Billy"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:20,
+                           comments: "Decker sends $20 to Billy"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:DEREK[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:1,
+                           comments: "Derek sends $1 to Billy"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:7,
+                           comments: "Billy sends $7 to Rob"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:5,
+                           comments: "Billy sends $6 to Brendan"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BILLY[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:8,
+                           comments: "Billy sends $8 to Justin"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:10,
+                           comments: "Justin sends $10 to Bard"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:7,
+                           comments: "Decker sends $7 to Bard"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:15,
+                           comments: "Pealer sends $15 to Bard"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:3,
+                           comments: "Bard sends $3 to Justin"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:DAN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Bard sends $2 to Dan"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:22,
+                           comments: "Bard sends $22 to Rob"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:1,
+                           comments: "Bard sends $1 to Brendan"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:BARD[:team_name]).first().id,
+                            year: 2017,
+                            cap_adjustment:2,
+                            comments: "Bard takes a $2 Cap hit for Chris Johnson"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Brendan takes a $2 Cap hit for Aaron Dobson"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Brendan takes a $2 Cap hit for Justin Hardy"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           year: 2018,
+                           cap_adjustment:5,
+                           comments: "Rob sends $5 to Brendan"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:8,
+                           comments: "Decker sends $8 to Brendan"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:BRENDAN[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:20,
+                           comments: "Rob sends $20 to Brendan"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Decker takes a $2 Cap hit for J. Allen"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:35,
+                           comments: "Nate sends $35 to Decker"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:GOAT[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:13,
+                           comments: "Fischetti sends $13 to Decker"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:6,
+                           comments: "Fischetti sends $6 to Jono"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:FISCHETTI[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Fischetti takes a $2 cap hit for Rashad Greene"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:JONO[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Jono takes a $2 cap hit for Ryan Fitzpatrick"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:5,
+                           comments: "Rob sends $5 to Justin"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:39,
+                           comments: "Pealer sends $39 to Justin"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:5,
+                           comments: "Pealer sends $5 to Justin"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Nate takes a $2 cap hit for Nate Washington"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:NATE[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Nate receives $2 for a Jared Cook Roster Error"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:4,
+                           comments: "Pealer sends $4 to Rob"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Pealer sends $2 to Rob"
+)
+SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Pealer sends $2 to Rob"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:PEALER[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:3,
+                           comments: "Pealer takes a $2 cap hit for Robert Griffin III"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Rob takes a $2 cap hit for Harry Douglas"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:2,
+                           comments: "Rob takes a $2 cap hit for Travaris Cadet"
+)
+SalaryCapAdjustment.create(cap_sender_id:DynastyTeam.where(team_name:ROB[:team_name]).first().id,
+                           year: 2017,
+                           cap_adjustment:23,
+                           comments: "Rob takes a $2 cap hit for C.J. Spiller"
+)

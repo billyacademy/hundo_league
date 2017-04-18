@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417152751) do
+ActiveRecord::Schema.define(version: 20170417185652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,14 @@ ActiveRecord::Schema.define(version: 20170417152751) do
     t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "salary_cap_adjustments", force: :cascade do |t|
+    t.integer "cap_recipient_id"
+    t.integer "cap_sender_id"
+    t.integer "year"
+    t.integer "cap_adjustment"
+    t.text    "comments"
   end
 
   create_table "teams", force: :cascade do |t|

@@ -30,11 +30,36 @@ class DynastyTeamsController < ApplicationController
     @players = Player.where(player_id:PlayerContract.where(dynasty_team_id:@dynasty_team[:id]).pluck(:player_id))
     @draft_picks = DraftPick.where(dynasty_team_id:@dynasty_team[:id])
     @current_year = Date.today.year
+    # if Date.today < Date.new(@current_year,09,01)
+    #   @
+    # else
+
+    #end
     @next_year = @current_year + 1
     @two_years_from_now = @next_year + 1
     @draft_picks_this_year = DraftPick.where(dynasty_team_id:@dynasty_team[:id], year:@current_year)
     @draft_picks_next_year = DraftPick.where(dynasty_team_id:@dynasty_team[:id], year:@next_year)
     @draft_picks_two_years_from_now = DraftPick.where(dynasty_team_id:@dynasty_team[:id], year:@two_years_from_now)
+    @salary_cap_adjustments = SalaryCapAdjustment.where(cap_sender_id: @dynasty_team[:id]).or(SalaryCapAdjustment.where(cap_recipient_id: @dynasty_team[:id]))
+    @net_adjustment = 0
+    @salary_cap_adjustments.each do |adjustment|
+      if adjustment.cap_sender_id == @dynasty_team.id
+        @net_adjustment -= adjustment.cap_adjustment
+      else
+        @net_adjustment += adjustment.cap_adjustment
+      end
+    end
+    @salary_cap = 300
+    @total_player_cost = 0
+    @player_contract.each do |contract|
+      if contract.current_salary < 15
+        @total_player_cost += (contract.current_salary + 1)
+        puts Player.where(player_id:contract.player_id).first()[:name] +":" + (contract.current_salary + 1).to_s
+      else
+        @total_player_cost += (contract.current_salary*1.1).round
+        puts Player.where(player_id:contract.player_id).first()[:name] + ":" + (contract.current_salary*1.1).round.to_s
+      end
+    end
   end
 
   def player_params
