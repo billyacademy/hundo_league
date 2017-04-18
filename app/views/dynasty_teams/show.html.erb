@@ -28,7 +28,7 @@
         <% if @player_contract.where(player_id: qb[:player_id]).first().current_salary < 15 %>
               -- Next Year Proj: $<%= @player_contract.where(player_id: qb[:player_id]).first().current_salary + 1 %>
         <% else %>
-              -- Next Year Proj: $<%= (@player_contract.where(player_id: qb[:player_id]).first().current_salary *1.1).round%>)
+              -- Next Year Proj: $<%= (@player_contract.where(player_id: rb[:player_id]).first().current_salary * 1.1).round %>
         <% end %>
         <% if @player_contract.where(player_id: qb[:player_id]).first().is_top_fourteen %>
             <br>Top 14 Player
