@@ -1,0 +1,98 @@
+<script>
+  $(document).ready(function(){
+    $('#Team1').on('change', function() {
+
+      $(':checkbox').each(function() {
+        this.checked = false;
+      });
+
+      <% @dynasty_teams.each do |team| %>
+      if (this.value == <%= team.id %>)
+      {
+        var teamDiv = document.getElementById( "<%=j "Team1"+team.id.to_s %>");
+        teamDiv.style.display = '';
+      }
+      else
+      {
+        var teamDiv = document.getElementById( "<%=j "Team1"+team.id.to_s %>");
+        teamDiv.style.display = 'none';
+      }
+      <% end %>
+    });
+    $('#Team2').on('change', function() {
+
+      $(':checkbox').each(function() {
+        this.checked = false;
+      });
+
+      <% @dynasty_teams.each do |team| %>
+      if (this.value == <%= team.id %>)
+      {
+        var teamDiv = document.getElementById( "<%=j "Team2"+team.id.to_s %>");
+        teamDiv.style.display = '';
+        teamDiv.style.display
+      }
+      else
+      {
+        var teamDiv = document.getElementById( "<%=j "Team2"+team.id.to_s %>");
+        teamDiv.style.display = 'none';
+      }
+      <% end %>
+    });
+  });
+</script>
+<style>
+  .col-1{float:left; width:50%;}
+  .col-2{float:right; width:50%;}
+</style>
+<h1 align="center">Trade Post</h1>
+<div class="col-1">
+  <div align="center">
+    <%= form_for DynastyTeam.new do |f| %>
+        <%=  f.collection_select :id, @dynasty_teams, :id, :team_name, {}, :id => "Team1" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-2">
+  <div align="center">
+    <%= form_for DynastyTeam.new do |f| %>
+        <%=  f.collection_select :id, @dynasty_teams, :id, :team_name, {}, :id => "Team2" %>
+    <% end %>
+  </div>
+</div>
+<%= form_for :dynasty_team do |f| %>  <!-- begin form -->
+  <div class="col-1">
+    <div align="center">
+      <% @dynasty_teams.each do |team| %>
+          <div style="display: none"; id=<%="Team1"+team.id.to_s%>>
+            <h2><%= team.team_name %></h2><br>
+            <% team.player_contracts.order(:id).each do |player_contract| %>
+              <%= f.check_box "Team1-DynastyTeam-" + player_contract.dynasty_team_id.to_s + "-" + PlayerContract.model_name + "-" + player_contract.id.to_s %> : <%= player_contract.player.name %><br>
+            <% end %>
+            <% team.draft_picks.each do |draft_pick| %>
+                <%= f.check_box "Team1-DynastyTeam-" + draft_pick.dynasty_team_id.to_s + "-" +DraftPick.model_name  + "-" + draft_pick.id.to_s %> :<%=	draft_pick.round.to_s + "." + draft_pick.pick.to_s + ":" + draft_pick.comments  %><br>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div align="center">
+      <% @dynasty_teams.each do |team| %>
+          <div style="display: none"; id=<%="Team2"+team.id.to_s%>>
+            <h2><%= team.team_name %></h2><br>
+            <% team.player_contracts.order(:id).each do |player_contract| %>
+                <%= f.check_box "Team2-DynastyTeam-" + player_contract.dynasty_team_id.to_s + "-" + PlayerContract.model_name + "-" + player_contract.id.to_s %> : <%= player_contract.player.name %><br>
+            <% end %>
+            <% team.draft_picks.each do |draft_pick| %>
+                <%= f.check_box "Team2-DynastyTeam-"+ draft_pick.dynasty_team_id.to_s + "-"+DraftPick.model_name + "-" + draft_pick.id.to_s  %> :<%=	draft_pick.round.to_s + "." + draft_pick.pick.to_s + ":" + draft_pick.comments  %><br>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <%= f.submit %>
+<% end %> <!-- end form -->
+

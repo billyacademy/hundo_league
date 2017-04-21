@@ -23,7 +23,8 @@
         <p><%= qb.name %>,
         <%= qb.position %><br>
         <%= qb.teamAbbr %><br>
-        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+qb['name'].delete(' ')+'/'+qb['player_id'].to_s+'/profile') %><br>
+        <%= link_to('NFL PROFILE PAGE', 'http://www.nfl.com/player/'+qb['name'].delete(' ')+'/'+qb['player_id'].to_s+'/profile') %>
+         - <%= link_to('WDD PAGE', player_path(qb.id)) %><br>
         Current Salary: $<%= @player_contract.where(player_id: qb[:player_id]).first().current_salary %>
         <% if @player_contract.where(player_id: qb[:player_id]).first().current_salary < 15 %>
               -- Next Year Proj: $<%= @player_contract.where(player_id: qb[:player_id]).first().current_salary + 1 %>

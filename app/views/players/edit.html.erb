@@ -1,0 +1,18 @@
+Name: <%= @player.name %><br />
+Position: <%= @player.position %><br />
+NFL Team: <%= @player.teamAbbr %><br />
+NFL Player ID: <%= @player.player_id %><br />
+NFL ESBID: <%= @player.esbid %><br />
+NFL GSIS Player ID: <%= @player.gsisPlayerId %><br />
+
+
+<%= form_for :player_contract do |f| %>
+    Dynasty Team ID : <%= f.collection_select :dynasty_team_id, DynastyTeam.order(:team_name),:id, :team_name, include_blank: true %><br />
+    Contract Type : <%= f.collection_select :contract_type_id, ContractType.all, :id, :name, include_blank: true %><br />
+    First Year of Contract : <%= f.select :first_year, (Time.zone.now.year - 10)..(Time.zone.now.year + 2) %><br />
+    <%= f.text_field :current_salary  %><br />
+    Top Fourteen?    : <%= f.check_box :is_top_fourteen %><br />
+    <%= f.hidden_field :player_id, :value => @player.player_id%>
+    <%= f.submit %>
+<% end %>
+
