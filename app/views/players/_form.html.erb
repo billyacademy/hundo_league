@@ -1,0 +1,11 @@
+<%= form_for Player.new do |f| %>
+    <%= image_tag('http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/'+@player_json['esbid']+'.png') %><br>
+    Player ID: <%= f.text_field :player_id, value: @player_json['id']  %>
+    esbid: <%= f.text_field :esbid, value: @player_json['esbid']  %>
+    gsisPlayerId: <%= f.text_field :gsisPlayerId, value: @player_json['gsisPlayerId']  %>
+    Name: <%= f.text_field :name, value: @player_json['name']  %>
+    position: <%= f.text_field :position, value: @player_json['position']  %>
+    teamAbbr: <%= f.text_field :teamAbbr, value: @player_json['teamAbbr']  %>
+
+    <%= f.submit 'Add Player' %>
+<% end %><br>

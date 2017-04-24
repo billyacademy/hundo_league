@@ -1,0 +1,19 @@
+<script type="text/javascript">
+//  document.getElementById('btn').onclick = function() {
+//    var val = document.getElementById('imagename').value,
+//        src = 'http://webpage.com/images/' + val +'.png',
+//        img = document.createElement('img');
+//
+//    img.src = src;
+//    document.body.appendChild(img);
+//  }
+</script>
+
+<%= form_for(@player, remote: true)  do |f| %>
+    <%= f.text_field :id, autofocus: true, class: 'title-field pull-left' %>
+    <%= f.submit 'Generate Player Information', class: 'btn home-add without-entry' %>
+<% end %>
+
+<div id="your_form_id" class="your_form_id">
+  <!-- form div -->
+</div>

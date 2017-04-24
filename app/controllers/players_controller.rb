@@ -32,41 +32,66 @@ class PlayersController < ApplicationController
   end
 
   def new
-    @player = Player.new
+    respond_to do |format|
+
+      @player = Player.new
+
+      format.html
+      format.json { render json: @player }
+
+    end
   end
 
   def edit
-    @player = Player.where(id:params[:id]).first()
-    @player_contract = PlayerContract.where(player_id:@player[:player_id]).first()
+    @player = Player.find_by(id:params[:id])
+    @player_contract = PlayerContract.find_by(player_id:@player[:player_id])
     if @player_contract != nil
-      @contract_type = ContractType.where(id:@player_contract.contract_type_id).first()
-      @team = DynastyTeam.where(id:@player_contract.dynasty_team_id).first()
+      @contract_type = ContractType.find_by(id:@player_contract.contract_type_id)
+      @team = DynastyTeam.find_by(id:@player_contract.dynasty_team_id)
     end
   end
 
   def create
-    @team = Team.new(player_params)
-    if @team.save
-      redirect_to teams_path
+    if params['player']['name'] == nil
+      @player_id = params[:player][:id]
     else
-      render :new
+      new_player = Player.new(
+        player_id: params['player']['player_id'].to_i,
+        esbid: params['player']['esbid'],
+        gsisPlayerId: params['player']['gsisPlayerId'],
+        name: params['player']['name'],
+        position: params['player']['position'],
+        teamAbbr: params['player']['teamAbbr']
+      )
+      if new_player.save
+        flash[:notice] = 'Player has been successfully added'
+        redirect_to new_player_path
+      else
+        flash[:success] = 'Try again.'
+        redirect_to new_player_path
+      end
+    end
+    if params["commit"] != 'Add Player'
+      @player_json = HTTParty.get("http://api.fantasy.nfl.com/v1/players/details?playerId="+@player_id)
+      @player_json = @player_json["players"][0]
+      respond_to do |format|
+        format.js { render 'players/show_update'}
+      end
     end
   end
 
   def show
-    @player = Player.where(id:params[:id]).first()
-    @player_contract = PlayerContract.where(player_id:@player[:player_id]).first()
+    @player = Player.find_by(id:params[:id])
+    @player_contract = PlayerContract.find_by(player_id:@player[:player_id])
     if @player_contract != nil
-      @contract_type = ContractType.where(id:@player_contract.contract_type_id).first()
-      @team = DynastyTeam.where(id:@player_contract.dynasty_team_id).first()
+      @contract_type = ContractType.find_by(id:@player_contract.contract_type_id)
+      @team = DynastyTeam.find_by(id:@player_contract.dynasty_team_id)
     end
-    binding.pry
   end
 
   def update
     player_contract = PlayerContract.find_by(player_id:player_contract_params[:player_id])
     if player_contract == nil
-      binding.pry
       @player_contract = PlayerContract.new(player_contract_params)
       if @player_contract.save
         redirect_to player_path

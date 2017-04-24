@@ -42,14 +42,16 @@
   });
 </script>
 <style>
-  .col-1{float:left; width:50%;}
-  .col-2{float:right; width:50%;}
+  .col-1{float:left; width:40%;}
+  .col-2{float:right; width:40%;}
+  .trade-form-body{width:100%;}
+  .trade-form-submit{float:none; text-align:center; width:20%;}
 </style>
 <h1 align="center">Trade Post</h1>
 <div class="col-1">
   <div align="center">
     <%= form_for DynastyTeam.new do |f| %>
-        <%=  f.collection_select :id, @dynasty_teams, :id, :team_name, {}, :id => "Team1" %>
+        <%=  f.select :id, DynastyTeam.all.collect {|dt| [ dt.team_name, dt.id ] }, {:include_blank => true}, :id => "Team1",:style => "width:80%" %>
     <% end %>
   </div>
 </div>
@@ -57,42 +59,53 @@
 <div class="col-2">
   <div align="center">
     <%= form_for DynastyTeam.new do |f| %>
-        <%=  f.collection_select :id, @dynasty_teams, :id, :team_name, {}, :id => "Team2" %>
+        <%=  f.select :id, DynastyTeam.all.collect {|dt| [ dt.team_name, dt.id ] }, {:include_blank => true}, :id => "Team2",:style => "width:80%" %>
     <% end %>
   </div>
 </div>
-<%= form_for :dynasty_team do |f| %>  <!-- begin form -->
-  <div class="col-1">
-    <div align="center">
-      <% @dynasty_teams.each do |team| %>
-          <div style="display: none"; id=<%="Team1"+team.id.to_s%>>
-            <h2><%= team.team_name %></h2><br>
-            <% team.player_contracts.order(:id).each do |player_contract| %>
-              <%= f.check_box "Team1-DynastyTeam-" + player_contract.dynasty_team_id.to_s + "-" + PlayerContract.model_name + "-" + player_contract.id.to_s %> : <%= player_contract.player.name %><br>
-            <% end %>
-            <% team.draft_picks.each do |draft_pick| %>
-                <%= f.check_box "Team1-DynastyTeam-" + draft_pick.dynasty_team_id.to_s + "-" +DraftPick.model_name  + "-" + draft_pick.id.to_s %> :<%=	draft_pick.round.to_s + "." + draft_pick.pick.to_s + ":" + draft_pick.comments  %><br>
-            <% end %>
-          </div>
-      <% end %>
+<div class="trade-form-body">
+  <%= form_for :dynasty_team do |f| %>  <!-- begin form -->
+    <div class="col-1">
+      <div align="center">
+        <% @dynasty_teams.each do |team| %>
+            <div style="display: none"; id=<%="Team1"+team.id.to_s%>>
+              <h2><%= team.team_name %></h2><br>
+              <% team.player_contracts.order(current_salary: :desc).each do |player_contract| %>
+                <%= f.check_box "Team1-DynastyTeam-" + player_contract.dynasty_team_id.to_s + "-" + PlayerContract.model_name + "-" + player_contract.id.to_s %> : <%= player_contract.player.name %><br>
+              <% end %>
+              <% team.draft_picks.each do |draft_pick| %>
+                  <%= f.check_box "Team1-DynastyTeam-" + draft_pick.dynasty_team_id.to_s + "-" +DraftPick.model_name  + "-" + draft_pick.id.to_s %> :<%=	draft_pick.round.to_s + "." + draft_pick.pick.to_s + ":" + draft_pick.comments  %><br>
+              <% end %>
+              <%= f.label "Amount of Cap to Send (" + @current_year.to_s + "):" %> <%= f.text_field "Team1-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + @current_year.to_s, :style => "width:20%; text-align:center" %>
+              <%= f.label "Amount of Cap to Send (" + (@current_year+1).to_s + "):" %> <%= f.text_field "Team1-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + (@current_year+1).to_s, :style => "width:20%; text-align:center" %>
+              <%= f.label "Amount of Cap to Send (" + (@current_year+2).to_s + "):" %> <%= f.text_field "Team1-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + (@current_year+2).to_s, :style => "width:20%; text-align:center" %>
+              <%= f.label "Amount of Cap to Send (" + (@current_year+3).to_s + "):" %> <%= f.text_field "Team1-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + (@current_year+3).to_s, :style => "width:20%; text-align:center" %>
+            </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="col-2">
-    <div align="center">
-      <% @dynasty_teams.each do |team| %>
-          <div style="display: none"; id=<%="Team2"+team.id.to_s%>>
-            <h2><%= team.team_name %></h2><br>
-            <% team.player_contracts.order(:id).each do |player_contract| %>
-                <%= f.check_box "Team2-DynastyTeam-" + player_contract.dynasty_team_id.to_s + "-" + PlayerContract.model_name + "-" + player_contract.id.to_s %> : <%= player_contract.player.name %><br>
-            <% end %>
-            <% team.draft_picks.each do |draft_pick| %>
-                <%= f.check_box "Team2-DynastyTeam-"+ draft_pick.dynasty_team_id.to_s + "-"+DraftPick.model_name + "-" + draft_pick.id.to_s  %> :<%=	draft_pick.round.to_s + "." + draft_pick.pick.to_s + ":" + draft_pick.comments  %><br>
-            <% end %>
-          </div>
-      <% end %>
+    <div class="col-2">
+      <div align="center">
+        <% @dynasty_teams.each do |team| %>
+            <div style="display: none"; id=<%="Team2"+team.id.to_s%>>
+              <h2><%= team.team_name %></h2><br>
+              <% team.player_contracts.order(:id).each do |player_contract| %>
+                  <%= f.check_box "Team2-DynastyTeam-" + player_contract.dynasty_team_id.to_s + "-" + PlayerContract.model_name + "-" + player_contract.id.to_s %> : <%= player_contract.player.name %><br>
+              <% end %>
+              <% team.draft_picks.each do |draft_pick| %>
+                  <%= f.check_box "Team2-DynastyTeam-"+ draft_pick.dynasty_team_id.to_s + "-"+DraftPick.model_name + "-" + draft_pick.id.to_s  %> :<%=	draft_pick.round.to_s + "." + draft_pick.pick.to_s + ":" + draft_pick.comments  %><br>
+              <% end %>
+              <%= f.label "Amount of Cap to Send (" + @current_year.to_s + "):" %> <%= f.text_field "Team2-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + @current_year.to_s, :style => "width:20%; text-align:center" %>
+              <%= f.label "Amount of Cap to Send (" + (@current_year+1).to_s + "):" %> <%= f.text_field "Team2-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + (@current_year+1).to_s, :style => "width:20%; text-align:center" %>
+              <%= f.label "Amount of Cap to Send (" + (@current_year+2).to_s + "):" %> <%= f.text_field "Team2-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + (@current_year+2).to_s, :style => "width:20%; text-align:center" %>
+              <%= f.label "Amount of Cap to Send (" + (@current_year+3).to_s + "):" %> <%= f.text_field "Team2-DynastyTeam-" + team.id.to_s + "-" + SalaryCapAdjustment.model_name + "-" + (@current_year+3).to_s, :style => "width:20%; text-align:center" %>
+            </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <%= f.submit %>
-<% end %> <!-- end form -->
-
+</div>
+<div class="trade-form-submit">
+  <%= f.submit "Submit Trade"%>
+  <% end %> <!-- end form -->
+</div>
