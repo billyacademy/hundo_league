@@ -3172,7 +3172,7 @@ DraftPick.create(dynasty_team_id:DynastyTeam.where(team_name:DEREK[:team_name]).
                  comments:'None')
 
 2018
-Adam
+#Adam
 SalaryCapAdjustment.create(cap_recipient_id:DynastyTeam.where(team_name:JUSTIN[:team_name]).first().id,
                            cap_sender_id:DynastyTeam.where(team_name:ADAM[:team_name]).first().id,
                            year: 2017,
