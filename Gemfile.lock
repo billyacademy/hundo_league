@@ -257,7 +257,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
-  devise
+  devise (~> 4.7, >= 4.7.2)
   elasticsearch
   factory_girl
   foundation
